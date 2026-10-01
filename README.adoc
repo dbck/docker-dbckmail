@@ -56,7 +56,7 @@ Please look at link:https://github.com/dbck/docker-dbckmail/blob/main/compose.ex
 
 ```
 docker compose exec dbckmail /bin/bash
-telnet dbckmail 25
+telnet localhost 25
 ehlo example.com
 mail from: me@example.com
 rcpt to: you@example.com
