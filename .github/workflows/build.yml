@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_NAMESPACE: dbck
-      IMAGE_NAME: mailtrap
+      IMAGE_NAME: dbckmail
 
     steps:
     - name: Checkout repository

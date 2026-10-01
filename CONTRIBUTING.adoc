@@ -5,8 +5,8 @@ Please send a pull request.
 # Development
 
 ```
-docker build -t="dbck/mailtrap:dev" build/
-docker container run --rm -it dbck/mailtrap:dev
+docker build -t="dbck/dbckmail:dev" build/
+docker container run --rm -it dbck/dbckmail:dev
 ```
 
 ## Build, develop and test image
@@ -27,9 +27,9 @@ export TAG=dev && docker compose down
 
 ```
 export TAG=$(date +%Y%m%d-%H%M%S)
-docker build -t="dbck/mailtrap:${TAG}" build/
-docker container run --rm -it dbck/mailtrap:${TAG}
-docker push dbck/mailtrap:${TAG}
+docker build -t="dbck/dbckmail:${TAG}" build/
+docker container run --rm -it dbck/dbckmail:${TAG}
+docker push dbck/dbckmail:${TAG}
 ```
 
 ```

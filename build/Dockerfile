@@ -1,7 +1,7 @@
 FROM debian:13.4-slim
 
 LABEL maintainer="Dennis Boeckmann <dev@dbck.de>"
-LABEL description="Debian based simple mailtrap container for development purposes"
+LABEL description="Debian based simple dbckmail container for development purposes"
 
 ENV DEBIAN_FRONTEND="noninteractive"
 
@@ -28,13 +28,13 @@ RUN apt-get update \
     supervisor \
     && rm -rf /var/lib/apt/lists/*
 
-ENV MAILTRAP_USER="mailtrap"
-ENV MAILTRAP_PASSWORD="mailtrap"
-ENV MAILTRAP_MAILBOX_LIMIT="51200000"
-ENV MAILTRAP_MESSAGE_LIMIT="10240000"
-ENV MAILTRAP_MAX_RECIPIENT_LIMIT="1000"
-ENV MAILTRAP_ROUNDCUBE_CONFIG_REQUEST_PATH=""
-ENV MAILTRAP_ROUNDCUBE_NAME="MailTrap Roundcube"
+ENV DBCKMAIL_USER="dbckmail"
+ENV DBCKMAIL_PASSWORD="dbckmail"
+ENV DBCKMAIL_MAILBOX_LIMIT="51200000"
+ENV DBCKMAIL_MESSAGE_LIMIT="10240000"
+ENV DBCKMAIL_MAX_RECIPIENT_LIMIT="1000"
+ENV DBCKMAIL_ROUNDCUBE_CONFIG_REQUEST_PATH=""
+ENV DBCKMAIL_ROUNDCUBE_NAME="DBCKMail Roundcube"
 
 # Avoid kernel logging
 RUN sed -i '/imklog/s/^/#/' /etc/rsyslog.conf

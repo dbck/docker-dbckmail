@@ -1,6 +1,6 @@
 services:
-  mailtrap:
-    image: dbck/mailtrap:${TAG}
+  dbckmail:
+    image: dbck/dbckmail:${TAG}
     build:
       context: ./build
     environment:

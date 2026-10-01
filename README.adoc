@@ -2,10 +2,6 @@
 
 This image provides a simple catch all email server for development with smtp, imap and webmail support. The base image is debian and only default packages are used. **Only use this image for development purposes, because it is not designed to be secure. If it is connectable from the Internet, it can lead to an open relay mail server.**
 
-# Inspired by
-
-* link:https://github.com/eaudeweb/edw.docker.mailtrap[eaudeweb/mailtrap]
-
 # Performance & Improvements
 
 This images uses dovecot as mda with sdbox as storage format, which delivers much more performance and stability than mbox with thousands of received mails. Also the image provides StartTLS / SSL with a selfsigned snakeoil certificate.
@@ -20,13 +16,13 @@ This images uses dovecot as mda with sdbox as storage format, which delivers muc
 # Environment variables with default values for customization
 
 ```
-MAILTRAP_USER=mailtrap
-MAILTRAP_PASSWORD=mailtrap
-MAILTRAP_MAILBOX_LIMIT=51200000
-MAILTRAP_MESSAGE_LIMIT=10240000
-MAILTRAP_MAX_RECIPIENT_LIMIT=1000
-MAILTRAP_ROUNDCUBE_CONFIG_REQUEST_PATH=""
-MAILTRAP_ROUNDCUBE_NAME="MailTrap Roundcube"
+DBCKMAIL_USER=dbckmail
+DBCKMAIL_PASSWORD=dbckmail
+DBCKMAIL_MAILBOX_LIMIT=51200000
+DBCKMAIL_MESSAGE_LIMIT=10240000
+DBCKMAIL_MAX_RECIPIENT_LIMIT=1000
+DBCKMAIL_ROUNDCUBE_CONFIG_REQUEST_PATH=""
+DBCKMAIL_ROUNDCUBE_NAME="DBCKMail Roundcube"
 ```
 
 # Starting a container
@@ -36,31 +32,31 @@ MAILTRAP_ROUNDCUBE_NAME="MailTrap Roundcube"
 ## Simple container start
 
 ```
-docker container run -d --rm --init --name=mailtrap -p 127.0.0.1:9080:80 -p 127.0.0.1:9025:25 dbck/mailtrap
+docker container run -d --rm --init --name=dbckmail -p 127.0.0.1:9080:80 -p 127.0.0.1:9025:25 dbck/dbckmail
 ```
 
 ## All ports mapped
 
 ```
-docker container run -d --rm --init --name=mailtrap -p 127.0.0.1:9080:80 -p 127.0.0.1:9025:25 -p 127.0.0.1:9587:587 -p 127.0.0.1:9465:465 -p 127.0.0.1:9143:143 -p 127.0.0.1:9993:993 dbck/mailtrap
+docker container run -d --rm --init --name=dbckmail -p 127.0.0.1:9080:80 -p 127.0.0.1:9025:25 -p 127.0.0.1:9587:587 -p 127.0.0.1:9465:465 -p 127.0.0.1:9143:143 -p 127.0.0.1:9993:993 dbck/dbckmail
 ```
 
 ## Suggested port mapping
 
 ```
-docker container run -d --rm --init --name=mailtrap -p 127.0.0.1:9080:80 -p 127.0.0.1:9025:25 -p 127.0.0.1:9587:587 -p 127.0.0.1:9143:143 dbck/mailtrap
-docker logs -f mailtrap
+docker container run -d --rm --init --name=dbckmail -p 127.0.0.1:9080:80 -p 127.0.0.1:9025:25 -p 127.0.0.1:9587:587 -p 127.0.0.1:9143:143 dbck/dbckmail
+docker logs -f dbckmail
 ```
 
 ## Example docker compose configuration
 
-Please look at link:https://github.com/dbck/docker-mailtrap/blob/main/compose.example.yaml[compose.example.yaml]
+Please look at link:https://github.com/dbck/docker-dbckmail/blob/main/compose.example.yaml[compose.example.yaml]
 
 # Send test mail while container is running
 
 ```
-docker compose exec mailtrap /bin/bash
-telnet mailtrap 25
+docker compose exec dbckmail /bin/bash
+telnet dbckmail 25
 ehlo example.com
 mail from: me@example.com
 rcpt to: you@example.com

@@ -4,9 +4,9 @@ inet_interfaces = all
 mydestination= static:ALL
 readme_directory = no
 
-message_size_limit = ###MAILTRAP_MESSAGE_LIMIT###
-mailbox_size_limit = ###MAILTRAP_MAILBOX_LIMIT###
-virtual_mailbox_limit = ###MAILTRAP_MAILBOX_LIMIT###
+message_size_limit = ###DBCKMAIL_MESSAGE_LIMIT###
+mailbox_size_limit = ###DBCKMAIL_MAILBOX_LIMIT###
+virtual_mailbox_limit = ###DBCKMAIL_MAILBOX_LIMIT###
 
 alias_maps = hash:/etc/aliases
 alias_database = $alias_maps
@@ -20,7 +20,7 @@ tls_random_prng_update_period = 3600s
 
 broken_sasl_auth_clients = yes
 
-smtpd_recipient_limit = ###MAILTRAP_MAX_RECIPIENT_LIMIT###
+smtpd_recipient_limit = ###DBCKMAIL_MAX_RECIPIENT_LIMIT###
 smtpd_recipient_restrictions = permit_mynetworks defer_unauth_destination permit
 
 smtpd_sasl_type = dovecot
@@ -42,7 +42,7 @@ smtp_tls_key_file = /etc/ssl/private/ssl-cert-snakeoil.key
 smtp_tls_CApath = /etc/ssl/certs
 
 
-#luser_relay = ###MAILTRAP_USER###
+#luser_relay = ###DBCKMAIL_USER###
 #smtpd_sasl_authenticated_header = yes
 
 #mynetworks = 0.0.0.0/0

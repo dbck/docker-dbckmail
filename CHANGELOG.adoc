@@ -13,27 +13,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 === Added
 
-- Set default UI to elastic theme for a more modern UI. Thanks to @kevinversteeg. (https://github.com/dbck/docker-mailtrap/pull/5[#5])
+- Set default UI to elastic theme for a more modern UI. Thanks to @kevinversteeg. (https://github.com/dbck/docker-dbckmail/pull/5[#5])
 
 === Changed
 
-- Upgraded docker base image to debian bullseye slim which reduces the image size. Thanks to @kevinversteeg. (https://github.com/dbck/docker-mailtrap/pull/5[#5])
-- Refactored config array to modern notation. Thanks to @kevinversteeg. (https://github.com/dbck/docker-mailtrap/pull/5[#5])
-- Fixed permission denied error for imklog. Thanks to @kevinversteeg. (https://github.com/dbck/docker-mailtrap/pull/5[#5])
-- Cleanup of packages and fixing of labels in Dockerfile. Thanks to @kevinversteeg. (https://github.com/dbck/docker-mailtrap/pull/5[#5])
+- Upgraded docker base image to debian bullseye slim which reduces the image size. Thanks to @kevinversteeg. (https://github.com/dbck/docker-dbckmail/pull/5[#5])
+- Refactored config array to modern notation. Thanks to @kevinversteeg. (https://github.com/dbck/docker-dbckmail/pull/5[#5])
+- Fixed permission denied error for imklog. Thanks to @kevinversteeg. (https://github.com/dbck/docker-dbckmail/pull/5[#5])
+- Cleanup of packages and fixing of labels in Dockerfile. Thanks to @kevinversteeg. (https://github.com/dbck/docker-dbckmail/pull/5[#5])
 
 == [1.1.0] - 2022-05-31
 
 === Added
 
-- Added curl package to support healthcheck. Thanks to @kevinversteeg. (https://github.com/dbck/docker-mailtrap/pull/3[#3])
-- Added volume to persist maildata between container restarts in example docker compose file. Thanks to @kevinversteeg. (https://github.com/dbck/docker-mailtrap/pull/4[#4])
+- Added curl package to support healthcheck. Thanks to @kevinversteeg. (https://github.com/dbck/docker-dbckmail/pull/3[#3])
+- Added volume to persist maildata between container restarts in example docker compose file. Thanks to @kevinversteeg. (https://github.com/dbck/docker-dbckmail/pull/4[#4])
 
 == [1.0.1] - 2022-05-05
 
 === Changed
 
-- Fixed empty text message in api. (https://github.com/dbck/docker-mailtrap/issues/2[#2])
+- Fixed empty text message in api. (https://github.com/dbck/docker-dbckmail/issues/2[#2])
 
 == [1.0.0] - 2021-02-21
 

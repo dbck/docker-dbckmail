@@ -17,7 +17,7 @@ server {
         fastcgi_read_timeout 300;
     }
 
-    location ###MAILTRAP_ROUNDCUBE_CONFIG_REQUEST_PATH### {
+    location ###DBCKMAIL_ROUNDCUBE_CONFIG_REQUEST_PATH### {
         proxy_pass http://localhost:80/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;

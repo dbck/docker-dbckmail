@@ -1,10 +1,10 @@
 services:
-  mailtrap:
-    image: dbck/mailtrap:latest
+  dbckmail:
+    image: dbck/dbckmail:latest
     environment:
       - TZ=Europe/Berlin
-      - MAILTRAP_USER=username
-      - MAILTRAP_PASSWORD=password
+      - DBCKMAIL_USER=username
+      - DBCKMAIL_PASSWORD=password
     volumes:
       - maildata:/var/mail
     ports:
