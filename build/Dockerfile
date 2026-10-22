@@ -1,4 +1,4 @@
-FROM debian:13.4-slim
+FROM debian:13.7-slim
 
 LABEL maintainer="Dennis Boeckmann <dev@dbck.de>"
 LABEL description="Debian based simple dbckmail container for development purposes"
